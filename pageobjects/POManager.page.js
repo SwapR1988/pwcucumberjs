@@ -9,7 +9,7 @@ class POManager{
     }
 
     getObject(){
-        return this.objectnew;
+        return this.objectnew; //chalega kese nahi badua
     }
 }
 module.exports = {POManager}

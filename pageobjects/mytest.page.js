@@ -17,7 +17,7 @@ class mytest{
     await this.username.fill(username)
     await this.password.fill(password)
 
-    await this.page.selectOption('select.form-control', 'Student');
+    await this.page.selectOption('select.form-control', 'Student'); //git pull nahi chal raha
 
     await this.acceptpolicy.check();
     await this.signinbtn.click();
