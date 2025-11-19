@@ -8,10 +8,10 @@ test('end to end test', async ({ page }) => {
     const password = "learning";
     
     
-    const myTest = poManager.getObject(); 
+    const myTestnew = poManager.getObject(); 
 
-    await myTest.goTo();
-    await myTest.validLogin(username,password)
+    await myTestnew.goTo();
+    await myTestnew.validLogin(username,password)
 
     await page.pause(10000)
 })

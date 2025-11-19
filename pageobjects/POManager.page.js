@@ -5,11 +5,11 @@ class POManager{
     
     constructor(page){
         this.page=page;
-        this.object = new mytest(this.page);
+        this.objectnew = new mytest(this.page);
     }
 
     getObject(){
-        return this.object;
+        return this.objectnew;
     }
 }
 module.exports = {POManager}
