@@ -8,7 +8,7 @@ class mytest{
         this.signinbtn = page.locator("//input[@id='signInBtn']")
     }
 
-    async  goTo(){
+    async goTo(){
         await this.page.goto("https://rahulshettyacademy.com/loginpagePractise/")
     }
 
@@ -17,7 +17,7 @@ class mytest{
     await this.username.fill(username)
     await this.password.fill(password)
 
-    await page.selectOption('select.form-control', 'Student');
+    await this.page.selectOption('select.form-control', 'Student');
 
     await this.acceptpolicy.check();
     await this.signinbtn.click();

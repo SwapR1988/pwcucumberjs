@@ -1,13 +1,16 @@
 const {expect, test } = require('@playwright/test')
-const {mytest} = require('../pageobjects/mytest.page')
+const {POManager} = require('../pageobjects/POManager.page.js')
 
-test('end to end test', async ({ page }) => {
+test('end to end test', async ({page}) => {
      
+    const pomanager = new POManager(page);
     const username = "rahulshettyacademy ";
     const password = "learning";
-    const myTest = new mytest(page)
-    myTest.goTo();
-    myTest.validLogin(username,password);
+   
+    const test1 = pomanager.getValidLogin();
+    //await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
+    await test1.goTo();
+    await test1.validLogin(username,password);
 
 
 })
