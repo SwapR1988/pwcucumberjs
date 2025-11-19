@@ -1,0 +1,6 @@
+# Node dependencies
+node_modules/
+
+# Playwright
+modified:   playwright-report/index.html/
+modified:   test-results/.last-run.json/
