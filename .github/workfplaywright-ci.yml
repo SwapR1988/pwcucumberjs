@@ -1,0 +1,50 @@
+name: Playwright Cucumber CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout Code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Setup Node JS Version
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Install browsers required by Playwright
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      # Execute Cucumber Playwright Tests
+      - name: Run Tests
+        run: npm test
+        continue-on-error: false  # Fail pipeline if tests fail
+
+      # Upload Test Artifacts (Allure + Cucumber Reports)
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-results
+          path: allure-results/
+
+      - name: Upload Cucumber Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cucumber-report
+          path: test-results/  # adjust if your folder differs

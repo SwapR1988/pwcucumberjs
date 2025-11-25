@@ -14,5 +14,5 @@ test('end to end test', async ({ page }) => {
     await myTestnew.goTo();
     await myTestnew.validLogin(dataSet.username,dataSet.password) //data from json
 
-    await page.pause(10000)
+    await page.pause()
 })
