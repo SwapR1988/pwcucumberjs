@@ -12,10 +12,10 @@ class mytest{
         await this.page.goto("https://rahulshettyacademy.com/loginpagePractise/")
     }
 
-    async validLogin(field){
+    async validLogin(username,password){
         
-    await this.username.fill(field.username)
-    await this.password.fill(field.password)
+    await this.username.fill(username)
+    await this.password.fill(password)
 
     await this.page.selectOption('select.form-control', 'Student'); //git pull nahi chal raha
 

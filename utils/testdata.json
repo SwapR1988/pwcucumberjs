@@ -1,8 +1,14 @@
-{
+[{
   
     "username": "rahulshettyacademy",
     "password": "learning",
-    "email": "test@example.com",
-    "ID" : "123"
+    "email": "test@example.com"
+},
+{
   
+    "username": "rahulshettyacademy1",
+    "password": "learning",
+    "email": "test@example.com"
+ 
 }
+]
