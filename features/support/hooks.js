@@ -14,12 +14,12 @@ BeforeStep(async function(){
     await this.page.screenshot({path: 'BeforeStep.png', fullpage:true})
 })
 
-AfterStep(async function(result){
-   if(result.status===Status.FAILED)
-   {
-    await this.page.screenshot();
-   }
-})
+// AfterStep(async function(result){
+//    if(result.status===Status.FAILED)
+//    {
+//     await this.page.screenshot();
+//    }
+// })
 
 After(async function(){
     console.log("Completed")

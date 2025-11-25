@@ -14,7 +14,8 @@ test(`end to end test ${data.username}`, async ({ page }) => {
     const myTestnew = poManager.getObject(); 
 
     await myTestnew.goTo();
-    await myTestnew.validLogin(data.username,data.password) 
-   
+    await myTestnew.validLogin(dataSet.username,dataSet.password) //data from json
+
+    await page.pause()
 })
 }

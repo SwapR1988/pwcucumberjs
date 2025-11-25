@@ -11,4 +11,3 @@ Then User logs in successfully
 Examples:
 |    UserName      |  Password  |
 |rahulshettyacademy|  learning  |
-|rahulshettyaaaaaay|  leddning  |
