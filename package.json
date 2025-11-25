@@ -2,7 +2,10 @@
   "name": "framework",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+ "scripts": {
+  "test": "cucumber-js --publish-quiet",
+  "allure:report": "allure generate ./allure-results --clean"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SwapR1988/MyFramework.git"
@@ -20,5 +23,9 @@
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@types/node": "^24.10.1"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "allure-playwright": "^3.4.2"
   }
 }
