@@ -1,5 +1,5 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-
+const {datahandling} = require('../../utils/datahandling.js')
 //const { POManager } = require('../../pageobjects/POManager.page.js');
 
 
@@ -7,13 +7,15 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 let myTestnew;
 
 Given('User log in to URL', async function () {
-       
+    
     myTestnew = this.poManager.getObject();
 
     await myTestnew.goTo();
 });
 
-When('User enters the {string} and {string}',{timeout: 10*1000} ,async function (username, password) {
+const dh =new datahandling();
+When('User enters the {String}',{timeout: 10*1000} ,async function (testdata) {
+    await dh.readdata(testdata);
     await myTestnew.validLogin(username, password);
 });
 

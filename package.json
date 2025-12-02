@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
  "scripts": {
-  "test": "npx cucumber-js features/**/*.feature --require features/step_definitions/**/*.js --require features/support/**/*.js --publish-quiet",
+  "test": "npx cucumber-js features/**/*.feature --require features/step_definitions/**/*.js --require features/support/**/*.js --require cucumber.js --publish-quiet",
   "allure:report": "allure generate ./allure-results --clean"
 },
   "repository": {
