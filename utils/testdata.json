@@ -1,14 +1,15 @@
-[{
+{   
+    "Student": [{
+        "TestCase1": {
+            "username": "rahulshettyacademy",
+            "password": "learning",
+            "email": "test@example.com"
+        },
+        "TestCase2" : {
+            "username": "rahulshettyacademy1",
+            "password": "learning",
+            "email": "test@example.com"
+        }
   
-    "username": "rahulshettyacademy",
-    "password": "learning",
-    "email": "test@example.com"
-},
-{
-  
-    "username": "rahulshettyacademy1",
-    "password": "learning",
-    "email": "test@example.com"
- 
+    }]
 }
-]
