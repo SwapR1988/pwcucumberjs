@@ -3,6 +3,7 @@ const { POManager } = require('../../pageobjects/POManager.page.js');
 const { Before, After, BeforeStep, AfterStep } = require('@cucumber/cucumber');
 const path = require('path')
 const fs = require('fs')
+let browser, context;
 
 Before(async function(){
     browser = await chromium.launch({ headless: false });
@@ -29,7 +30,7 @@ After(async function(){
 })
 
 let gendata;
-const genericData=()=>{
+const genericData=async()=>{
     const filePath = path.join(__dirname,'../../utils/testdata.json')
     const jsondata = fs.readFileSync(filePath,'utf8')
     gendata = JSON.parse(jsondata)
