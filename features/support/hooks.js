@@ -36,4 +36,4 @@ const genericData=()=>{
     return gendata;
 }
 
-module.exports={genericdata}
+module.exports={genericData}
