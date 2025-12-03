@@ -1,22 +1,27 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-const {datahandling} = require('../../utils/DataHandling.js')
+const {DataHandling} = require('../../utils/DataHandling')
 //const { POManager } = require('../../pageobjects/POManager.page.js');
 
 
 
-let myTestnew;
+let objectnew;
 
-Given('User log in to URL', async function () {
+Given('User log in to URL',{timeout: 10*5000}, async function () {
     
-    myTestnew = this.poManager.getObject();
+    objectnew = this.poManager.getObject();
 
-    await myTestnew.goTo();
+    await objectnew.goTo();
 });
 
-const dh =new datahandling();
-When('User enters the {String}',{timeout: 10*1000} ,async function (testdata) {
-    await dh.readdata(testdata);
-    await myTestnew.validLogin(username, password);
+const dh =new DataHandling();
+When('User enters the {string}',{timeout: 10*5000} ,async function (testdata) {
+   //  myTestnew = this.poManager.getObject();
+    await dh.readData(testdata);
+    const username = await dh.getData('username')
+    console.log(username)
+    const password = await dh.getData('password')
+    console.log(password)
+    await objectnew.validLogin(username, password);
 });
 
 When('User select Student from the dropdown', async function () {
