@@ -1,4 +1,4 @@
-const {genericdata} = require('./hooks');
+const {genericData} = require('../features/support/hooks');
 
 let testJsonData;
 let data;
@@ -8,7 +8,7 @@ class DataHandling{
     async readData(testData){ //function to read data from testData.json Student#TestCase1
         try{
             
-            testJsonData = await getGenericData(); //fetching json data from json
+            testJsonData = await genericData(); //fetching json data from json
         
         //Splitting the testData string into array to fetch data from json
         let testDataArray = testData.split('#'); 
